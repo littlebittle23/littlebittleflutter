@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>641366725380-12oquhf4pn571gva5muhglgmv4thum8m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.641366725380-12oquhf4pn571gva5muhglgmv4thum8m</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>641366725380-voo8f9oald66l11m0vf6cef36bhppmmg.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB2DsvYhDRsXvQIZiN9ZGR5FuPCvhmcGTU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>641366725380</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.fluttergo.littlebittle</string>
+	<key>PROJECT_ID</key>
+	<string>little-bittle-7a115</string>
+	<key>STORAGE_BUCKET</key>
+	<string>little-bittle-7a115.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:641366725380:ios:c2c1636e0bd8cbe3bf7651</string>
+</dict>
+</plist>
