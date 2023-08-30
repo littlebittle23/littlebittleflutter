@@ -274,7 +274,10 @@ class _SignUpUsernameConfirmationWidgetState
                                   displayName: FFAppState().signupName,
                                   photoUrl:
                                       'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg',
-                                  username: FFAppState().signupUsername,
+                                  username: valueOrDefault<String>(
+                                    FFAppState().signupUsername,
+                                    'users',
+                                  ),
                                   birthday: FFAppState().signupBirthday,
                                   createdTime: getCurrentTimestamp,
                                   bio: '',

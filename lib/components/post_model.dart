@@ -1,7 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/personal_post_options_widget.dart';
-import '/components/post_options_widget.dart';
 import '/components/send_post_widget.dart';
 import '/components/tagged_users_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';

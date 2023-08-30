@@ -135,6 +135,10 @@ class _SignUpUsernameWidgetState extends State<SignUpUsernameWidget> {
                                 List<AdministrativeRecord>
                                     columnAdministrativeRecordList =
                                     snapshot.data!;
+                                // Return an empty Container when the item does not exist.
+                                if (snapshot.data!.isEmpty) {
+                                  return Container();
+                                }
                                 final columnAdministrativeRecord =
                                     columnAdministrativeRecordList.isNotEmpty
                                         ? columnAdministrativeRecordList.first
@@ -240,10 +244,14 @@ class _SignUpUsernameWidgetState extends State<SignUpUsernameWidget> {
                                                 .usernameControllerValidator
                                                 .asValidator(context),
                                           ),
-                                          if (_model.usernameController.text !=
-                                                  null &&
-                                              _model.usernameController.text !=
-                                                  '')
+                                          if (valueOrDefault<bool>(
+                                            _model.usernameController.text !=
+                                                    null &&
+                                                _model.usernameController
+                                                        .text !=
+                                                    '',
+                                            true,
+                                          ))
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -251,7 +259,9 @@ class _SignUpUsernameWidgetState extends State<SignUpUsernameWidget> {
                                               child: StreamBuilder<
                                                   List<AdministrativeRecord>>(
                                                 stream:
-                                                    queryAdministrativeRecord(),
+                                                    queryAdministrativeRecord(
+                                                  singleRecord: true,
+                                                ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
@@ -273,24 +283,27 @@ class _SignUpUsernameWidgetState extends State<SignUpUsernameWidget> {
                                                   List<AdministrativeRecord>
                                                       stackAdministrativeRecordList =
                                                       snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final stackAdministrativeRecord =
+                                                      stackAdministrativeRecordList
+                                                              .isNotEmpty
+                                                          ? stackAdministrativeRecordList
+                                                              .first
+                                                          : null;
                                                   return Container(
                                                     width: 18.0,
                                                     height: 18.0,
                                                     child: Stack(
-                                                      children: List.generate(
-                                                          stackAdministrativeRecordList
-                                                              .length,
-                                                          (stackIndex) {
-                                                        final stackAdministrativeRecord =
-                                                            stackAdministrativeRecordList[
-                                                                stackIndex];
-                                                        return Visibility(
-                                                          visible: !stackAdministrativeRecord
-                                                              .usernames
-                                                              .contains(_model
-                                                                  .usernameController
-                                                                  .text),
-                                                          child: Align(
+                                                      children: [
+                                                        if (!stackAdministrativeRecord!
+                                                            .usernames
+                                                            .contains(_model
+                                                                .usernameController
+                                                                .text))
+                                                          Align(
                                                             alignment:
                                                                 AlignmentDirectional(
                                                                     1.0, 0.0),
@@ -302,8 +315,25 @@ class _SignUpUsernameWidgetState extends State<SignUpUsernameWidget> {
                                                               size: 18.0,
                                                             ),
                                                           ),
-                                                        );
-                                                      }),
+                                                        if (stackAdministrativeRecord
+                                                                ?.usernames
+                                                                ?.contains(_model
+                                                                    .usernameController
+                                                                    .text) ??
+                                                            true)
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    1.0, 0.0),
+                                                            child: Icon(
+                                                              Icons
+                                                                  .close_rounded,
+                                                              color: Color(
+                                                                  0xFFF83639),
+                                                              size: 18.0,
+                                                            ),
+                                                          ),
+                                                      ],
                                                     ),
                                                   );
                                                 },

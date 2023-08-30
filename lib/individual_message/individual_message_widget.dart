@@ -1329,21 +1329,28 @@ class _IndividualMessageWidgetState extends State<IndividualMessageWidget> {
                                                                                   replacement: '…',
                                                                                 ),
                                                                                 maxLines: 1,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                      color: Color(0xFF030055),
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                    ),
                                                                               ),
                                                                             ],
                                                                           ),
                                                                         ),
-                                                                        Image
-                                                                            .network(
-                                                                          photoSharingPostPostsRecord
-                                                                              .postPhoto,
-                                                                          width:
-                                                                              250.0,
-                                                                          height:
-                                                                              250.0,
-                                                                          fit: BoxFit
-                                                                              .cover,
+                                                                        ClipRRect(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(9.0),
+                                                                          child:
+                                                                              Image.network(
+                                                                            photoSharingPostPostsRecord.postPhoto,
+                                                                            width:
+                                                                                250.0,
+                                                                            height:
+                                                                                250.0,
+                                                                            fit:
+                                                                                BoxFit.cover,
+                                                                          ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -1398,7 +1405,7 @@ class _IndividualMessageWidgetState extends State<IndividualMessageWidget> {
                             ),
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Color(0xCDF3F3F3),
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(40.0),
                               ),
                               child: Padding(
