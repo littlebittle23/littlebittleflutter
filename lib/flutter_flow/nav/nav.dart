@@ -135,16 +135,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => NewPostWidget(),
             ),
             FFRoute(
-              name: 'CallToAction',
-              path: 'callToAction',
-              requireAuth: true,
-              builder: (context, params) => CallToActionWidget(),
-            ),
-            FFRoute(
               name: 'Location',
               path: 'location',
               requireAuth: true,
               builder: (context, params) => LocationWidget(),
+            ),
+            FFRoute(
+              name: 'CallToAction',
+              path: 'callToAction',
+              requireAuth: true,
+              builder: (context, params) => CallToActionWidget(),
             ),
             FFRoute(
               name: 'SignUp',
@@ -194,18 +194,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => SelectTaggedUsersWidget(),
             ),
             FFRoute(
+              name: 'EditProfile',
+              path: 'editProfile',
+              requireAuth: true,
+              builder: (context, params) => EditProfileWidget(),
+            ),
+            FFRoute(
               name: 'ProfileOther',
               path: 'profileOther',
               requireAuth: true,
               builder: (context, params) => ProfileOtherWidget(
                 username: params.getParam('username', ParamType.String),
               ),
-            ),
-            FFRoute(
-              name: 'EditProfile',
-              path: 'editProfile',
-              requireAuth: true,
-              builder: (context, params) => EditProfileWidget(),
             ),
             FFRoute(
               name: 'FollowersFollowing',

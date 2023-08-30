@@ -1,7 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/personal_post_options_widget.dart';
-import '/components/post_options_widget.dart';
 import '/components/send_post_widget.dart';
 import '/components/tagged_users_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -127,8 +125,8 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            10.0, 10.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -275,50 +273,6 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
                               ),
                             ],
                           ),
-                        ),
-                      ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          if (widget.post?.postUser == currentUserReference) {
-                            await showModalBottomSheet(
-                              isScrollControlled: true,
-                              backgroundColor: Colors.transparent,
-                              barrierColor: Color(0x00000000),
-                              context: context,
-                              builder: (context) {
-                                return Padding(
-                                  padding: MediaQuery.viewInsetsOf(context),
-                                  child: PersonalPostOptionsWidget(
-                                    post: widget.post,
-                                  ),
-                                );
-                              },
-                            ).then((value) => setState(() {}));
-                          } else {
-                            await showModalBottomSheet(
-                              isScrollControlled: true,
-                              backgroundColor: Colors.transparent,
-                              barrierColor: Color(0x00000000),
-                              context: context,
-                              builder: (context) {
-                                return Padding(
-                                  padding: MediaQuery.viewInsetsOf(context),
-                                  child: PostOptionsWidget(
-                                    post: widget.post,
-                                  ),
-                                );
-                              },
-                            ).then((value) => setState(() {}));
-                          }
-                        },
-                        child: Icon(
-                          FFIcons.kmore,
-                          color: Colors.black,
-                          size: 24.0,
                         ),
                       ),
                     ],
@@ -478,7 +432,8 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(7.0, 7.0, 0.0, 0.0),
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 0.0, 10.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [

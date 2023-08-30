@@ -652,11 +652,9 @@ class _FeedWidgetState extends State<FeedWidget> with TickerProviderStateMixin {
                                                           gradient:
                                                               LinearGradient(
                                                             colors: [
-                                                              Color(0xFF1E4C7C),
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .tertiary,
-                                                              Color(0xFFA594F9)
+                                                              Color(0xFF1E7C4D),
+                                                              Color(0xFF8FFF00),
+                                                              Color(0xFFF3FB97)
                                                             ],
                                                             stops: [
                                                               0.0,
@@ -961,11 +959,11 @@ class _FeedWidgetState extends State<FeedWidget> with TickerProviderStateMixin {
                                                                       LinearGradient(
                                                                     colors: [
                                                                       Color(
-                                                                          0xFF1E4C7C),
+                                                                          0xFF1E7C4D),
                                                                       Color(
-                                                                          0xFF7371FC),
+                                                                          0xFF8FFF00),
                                                                       Color(
-                                                                          0xFFA594F9)
+                                                                          0xFFF3FB97)
                                                                     ],
                                                                     stops: [
                                                                       0.0,
